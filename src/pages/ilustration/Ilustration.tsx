@@ -2,45 +2,26 @@
 import { useEffect, useState } from "react";
 import { Footer } from "../../components";
 
-
+const BASE_URL = "/portfolioyixuan/";
 const images = [
+  { principal: `${BASE_URL}images/background.png`, losdemas: [`${BASE_URL}images/background.png`] },
   {
-    principal: "/images/background.png",
-    losdemas: ["/images/background.png"],
-  },
-  {
-    principal: "/images/portada.png",
+    principal: `${BASE_URL}images/portada.png`,
     losdemas: [
-    "/images/alice.png",
-    "/images/portada.png",
-    "/images/guarda1.png",
-    "/images/guarda2.png",
-    "/images/pagina.png",
-    "/images/alicia.png",
-    "/images/ca.png",
-    "/images/ma.png",
-    "/images/ma1.png",
+      `${BASE_URL}images/alice.png`,
+      `${BASE_URL}images/portada.png`,
+      `${BASE_URL}images/guarda1.png`,
+      `${BASE_URL}images/guarda2.png`,
+      `${BASE_URL}images/pagina.png`,
+      `${BASE_URL}images/alicia.png`,
+      `${BASE_URL}images/ca.png`,
+      `${BASE_URL}images/ma.png`,
+      `${BASE_URL}images/ma1.png`,
     ],
   },
-  {
-    principal: "/images/nena.png",
-    losdemas: ["/images/nena.png",
-      "/images/nena1.png",
-    ],
-  },
-  {
-    principal: "/images/conejo.png",
-    losdemas: [
-      "/images/conejo.png",
-    ],
-  },
-  {
-    principal: "/images/o.png",
-    losdemas: ["/images/o.png",
-      "/images/c.png",
-      "/images/v.png",
-    ],
-  },
+  { principal: `${BASE_URL}images/nena.png`, losdemas: [`${BASE_URL}images/nena.png`, `${BASE_URL}images/nena1.png`] },
+  { principal: `${BASE_URL}images/conejo.png`, losdemas: [`${BASE_URL}images/conejo.png`] },
+  { principal: `${BASE_URL}images/o.png`, losdemas: [`${BASE_URL}images/o.png`, `${BASE_URL}images/c.png`, `${BASE_URL}images/v.png`] },
 ];
 
 export const Ilustration = () => {
@@ -134,7 +115,7 @@ export const Ilustration = () => {
             onClick={closeBigImagen}
             className="absolute top-4 left-4 opacity-30 hover:opacity-100 cursor-pointer transition-all duration-300 bg-black lg:p-2 p-3 rounded-full"
           >
-            <img src="/icons/close.png" className="w-3 lg:w-4"></img>
+            <img src={`${BASE_URL}icons/close.png`} className="w-3 lg:w-4"></img>
           </button>
 
           {losDemas.length > 1 && (
@@ -164,7 +145,7 @@ export const Ilustration = () => {
                 onClick={anteriorImagen}
                 className="absolute right-4 opacity-0 lg:opacity-30 hover:opacity-100 cursor-pointer transition-all duration-300"
               >
-                <img src="/icons/next.png" className=" w-10"></img>
+                <img src={`${BASE_URL}icons/next.png`} className=" w-10"></img>
               </button>
             </>
           )}

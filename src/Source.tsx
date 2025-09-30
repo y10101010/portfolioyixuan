@@ -4,6 +4,7 @@ import { Scroll } from "./components/Scroll";
 
 
 export const Source = () => {
+const BASE_URL = "/portfolioyixuan/";
 const location = useLocation();
 const flexBetween = "flex justify-center items-center";
 
@@ -106,7 +107,7 @@ return (
                 ${
                     !MenuOpen? "transform rotate-180 transition-transform duration-500" : ""
                 }`}
-                src="/icons/menu.png"
+                src={`${BASE_URL}icons/menu.png`}
             />
             </button>
         </div>
@@ -128,7 +129,7 @@ return (
         className={`absolute top-5 right-5 text-black text-3xl font-bold cursor-pointer transform transition-all duration-300
             ${MenuOpen ? "opacity-100 rotate-90" : "opacity-0 rotate-0"}`}
     >
-        <img src="/icons/x.png" className="w-7 h-full" />
+        <img src={`${BASE_URL}icons/x.png`} className="w-7 h-full" />
     </button>
 
     {menuItems.map((item, index) => (
@@ -148,7 +149,7 @@ return (
         <button
           onClick={scroll}
           className="fixed w-8 bottom-25 left-1/2 transform -translate-x-1/2 md:hidden lg:hidden z-50 cursor-pointer hover:scale-110">
-          <img src="/icons/top.png"></img>
+          <img src={`${BASE_URL}icons/top.png`}></img>
         </button>
       )}
 

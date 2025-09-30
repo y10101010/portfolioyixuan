@@ -1,62 +1,65 @@
 import { useEffect, useState } from "react";
 import { Footer } from "../../components";
 
+
+const BASE_URL = "/portfolioyixuan/";
+
 const images = [
   {
-    principal: "/images/cartel.png",
-    losdemas: [{ src: "/images/cartel.png" }],
+    principal: `${BASE_URL}images/cartel.png`,
+    losdemas: [{ src: `${BASE_URL}images/cartel.png` }],
   },
   {
-    principal: "/images/transversal/carteld.png",
+    principal: `${BASE_URL}images/transversal/carteld.png`,
     losdemas: [
-      { src: "/images/transversal/carteld.png", info: "Project for a campaign to raise the profile of women in science and encourage future generations of girls to pursue careers in this field. Group design project involving four people.", title:"Dones de ciencia" },
-      { src: "/images/transversal/post1.png", info: "Project for a campaign to raise the profile of women in science and encourage future generations of girls to pursue careers in this field. Group design project involving four people.", title:"Dones de ciencia" },
-      { src: "/images/transversal/post2.png", info: "Project for a campaign to raise the profile of women in science and encourage future generations of girls to pursue careers in this field. Group design project involving four people.", title:"Dones de ciencia" },
-      { src: "/images/transversal/dm1.png", info: "Project for a campaign to raise the profile of women in science and encourage future generations of girls to pursue careers in this field. Group design project involving four people.", title:"Dones de ciencia" },
-      { src: "/images/transversal/dm2.png", info: "Project for a campaign to raise the profile of women in science and encourage future generations of girls to pursue careers in this field. Group design project involving four people.", title:"Dones de ciencia" },
-      { src: "/images/transversal/dm3.png", info: "Project for a campaign to raise the profile of women in science and encourage future generations of girls to pursue careers in this field. Group design project involving four people.", title:"Dones de ciencia" },
+      { src: `${BASE_URL}images/transversal/carteld.png`, info: "Project for a campaign to raise the profile of women in science and encourage future generations of girls to pursue careers in this field. Group design project involving four people.", title:"Dones de ciencia" },
+      { src: `${BASE_URL}images/transversal/post1.png`, info: "Project for a campaign to raise the profile of women in science and encourage future generations of girls to pursue careers in this field. Group design project involving four people.", title:"Dones de ciencia" },
+      { src: `${BASE_URL}images/transversal/post2.png`, info: "Project for a campaign to raise the profile of women in science and encourage future generations of girls to pursue careers in this field. Group design project involving four people.", title:"Dones de ciencia" },
+      { src: `${BASE_URL}images/transversal/dm1.png`, info: "Project for a campaign to raise the profile of women in science and encourage future generations of girls to pursue careers in this field. Group design project involving four people.", title:"Dones de ciencia" },
+      { src: `${BASE_URL}images/transversal/dm2.png`, info: "Project for a campaign to raise the profile of women in science and encourage future generations of girls to pursue careers in this field. Group design project involving four people.", title:"Dones de ciencia" },
+      { src: `${BASE_URL}images/transversal/dm3.png`, info: "Project for a campaign to raise the profile of women in science and encourage future generations of girls to pursue careers in this field. Group design project involving four people.", title:"Dones de ciencia" },
     ],
   },
   {
-    principal: "/images/CartelPAM.png",
+    principal: `${BASE_URL}images/CartelPAM.png`,
     losdemas: [
-      { src: "/images/CartelPAM.png", info: "Project to promote the exhibition (PAM) of master's students from the Faculty of Fine Arts. Design work focused on the adaptability of this project to different visual media. Group project of four people", title:"PAM" },
-      { src: "/images/Banner.png", info: "Project to promote the exhibition (PAM) of master's students from the Faculty of Fine Arts. Design work focused on the adaptability of this project to different visual media. Group project of four people", title:"PAM"},
-      { src: "/images/PostIG.png", info: "Project to promote the exhibition (PAM) of master's students from the Faculty of Fine Arts. Design work focused on the adaptability of this project to different visual media. Group project of four people", title:"PAM" },
-      { src: "/images/Story.png", info: "Project to promote the exhibition (PAM) of master's students from the Faculty of Fine Arts. Design work focused on the adaptability of this project to different visual media. Group project of four people", title:"PAM" },
-      { src: "/images/Vinilo.png", info: "Project to promote the exhibition (PAM) of master's students from the Faculty of Fine Arts. Design work focused on the adaptability of this project to different visual media. Group project of four people", title:"PAM" },
-      { src: "/images/ViniloMockup.png", info: "Project to promote the exhibition (PAM) of master's students from the Faculty of Fine Arts. Design work focused on the adaptability of this project to different visual media. Group project of four people", title:"PAM" },
-      { src: "/images/mockupCartel.png", info: "Project to promote the exhibition (PAM) of master's students from the Faculty of Fine Arts. Design work focused on the adaptability of this project to different visual media. Group project of four people", title:"PAM" },
-      { src: "/images/MockupFolleto.png", info: "Project to promote the exhibition (PAM) of master's students from the Faculty of Fine Arts. Design work focused on the adaptability of this project to different visual media. Group project of four people", title:"PAM" },
-      { src: "/images/MockupFolleto1.png", info: "Project to promote the exhibition (PAM) of master's students from the Faculty of Fine Arts. Design work focused on the adaptability of this project to different visual media. Group project of four people", title:"PAM" },
+      { src: `${BASE_URL}images/CartelPAM.png`, info: "Project to promote the exhibition (PAM) of master's students from the Faculty of Fine Arts. Design work focused on the adaptability of this project to different visual media. Group project of four people", title:"PAM" },
+      { src: `${BASE_URL}images/Banner.png`, info: "Project to promote the exhibition (PAM) of master's students from the Faculty of Fine Arts. Design work focused on the adaptability of this project to different visual media. Group project of four people", title:"PAM"},
+      { src: `${BASE_URL}images/PostIG.png`, info: "Project to promote the exhibition (PAM) of master's students from the Faculty of Fine Arts. Design work focused on the adaptability of this project to different visual media. Group project of four people", title:"PAM" },
+      { src: `${BASE_URL}images/Story.png`, info: "Project to promote the exhibition (PAM) of master's students from the Faculty of Fine Arts. Design work focused on the adaptability of this project to different visual media. Group project of four people", title:"PAM" },
+      { src: `${BASE_URL}images/Vinilo.png`, info: "Project to promote the exhibition (PAM) of master's students from the Faculty of Fine Arts. Design work focused on the adaptability of this project to different visual media. Group project of four people", title:"PAM" },
+      { src: `${BASE_URL}images/ViniloMockup.png`, info: "Project to promote the exhibition (PAM) of master's students from the Faculty of Fine Arts. Design work focused on the adaptability of this project to different visual media. Group project of four people", title:"PAM" },
+      { src: `${BASE_URL}images/mockupCartel.png`, info: "Project to promote the exhibition (PAM) of master's students from the Faculty of Fine Arts. Design work focused on the adaptability of this project to different visual media. Group project of four people", title:"PAM" },
+      { src: `${BASE_URL}images/MockupFolleto.png`, info: "Project to promote the exhibition (PAM) of master's students from the Faculty of Fine Arts. Design work focused on the adaptability of this project to different visual media. Group project of four people", title:"PAM" },
+      { src: `${BASE_URL}images/MockupFolleto1.png`, info: "Project to promote the exhibition (PAM) of master's students from the Faculty of Fine Arts. Design work focused on the adaptability of this project to different visual media. Group project of four people", title:"PAM" },
     ],
   },
   {
-    principal: "/images/alegria.png",
-    losdemas: [{ src: "/images/alegria.png" }],
+    principal: `${BASE_URL}images/alegria.png`,
+    losdemas: [{ src: `${BASE_URL}images/alegria.png` }],
   },
   {
-    principal: "/images/cartel01.png",
+    principal: `${BASE_URL}images/cartel01.png`,
     losdemas: [
-      { src: "/images/cartel01.png", info: "Project for a campaign focused on a summer camp located in Valencia's Central Park for teenagers aged 12 to 17. Group project of 4. My main contribution has been the website.", title:"Campus Central Valencia" },
-      { src: "/images/cartel02.png", info: "Project for a campaign focused on a summer camp located in Valencia's Central Park for teenagers aged 12 to 17. Group project of 4. My main contribution has been the website.", title:"Campus Central Valencia" },
-      { src: "/images/cartel03.png", info: "Project for a campaign focused on a summer camp located in Valencia's Central Park for teenagers aged 12 to 17. Group project of 4. My main contribution has been the website.", title:"Campus Central Valencia" },
-      { src: "/images/folletoC.png", info: "Project for a campaign focused on a summer camp located in Valencia's Central Park for teenagers aged 12 to 17. Group project of 4. My main contribution has been the website.", title:"Campus Central Valencia" },
-      { src: "/images/folletoC1.png", info: "Project for a campaign focused on a summer camp located in Valencia's Central Park for teenagers aged 12 to 17. Group project of 4. My main contribution has been the website.", title:"Campus Central Valencia" },
+      { src: `${BASE_URL}images/cartel01.png`, info: "Project for a campaign focused on a summer camp located in Valencia's Central Park for teenagers aged 12 to 17. Group project of 4. My main contribution has been the website.", title:"Campus Central Valencia" },
+      { src: `${BASE_URL}images/cartel02.png`, info: "Project for a campaign focused on a summer camp located in Valencia's Central Park for teenagers aged 12 to 17. Group project of 4. My main contribution has been the website.", title:"Campus Central Valencia" },
+      { src: `${BASE_URL}images/cartel03.png`, info: "Project for a campaign focused on a summer camp located in Valencia's Central Park for teenagers aged 12 to 17. Group project of 4. My main contribution has been the website.", title:"Campus Central Valencia" },
+      { src: `${BASE_URL}images/folletoC.png`, info: "Project for a campaign focused on a summer camp located in Valencia's Central Park for teenagers aged 12 to 17. Group project of 4. My main contribution has been the website.", title:"Campus Central Valencia" },
+      { src: `${BASE_URL}images/folletoC1.png`, info: "Project for a campaign focused on a summer camp located in Valencia's Central Park for teenagers aged 12 to 17. Group project of 4. My main contribution has been the website.", title:"Campus Central Valencia" },
     ],
   },
   {
-    principal: "/images/m1.png",
+    principal: `${BASE_URL}images/m1.png`,
     losdemas: [
-      { src: "/images/m1.png" },
-      { src: "/images/m2.png" },
-      { src: "/images/m3.png" },
-      { src: "/images/m4.png" },
+      { src: `${BASE_URL}images/m1.png` },
+      { src: `${BASE_URL}images/m2.png` },
+      { src: `${BASE_URL}images/m3.png` },
+      { src: `${BASE_URL}images/m4.png` },
     ],
   },
   {
-    principal: "/images/boniches.png",
-    losdemas: [{ src: "/images/big/cartel-1.png"}],
+    principal: `${BASE_URL}images/boniches.png`,
+    losdemas: [{ src: `${BASE_URL}images/big/cartel-1.png`}],
   },
 ];
 
@@ -172,7 +175,7 @@ export const Design = () => {
           onClick={closeBigImagen}
           className="absolute top-4 left-4 opacity-30 hover:opacity-100 cursor-pointer transition-all duration-300 bg-black p-3 lg:p-3 rounded-full"
         >
-          <img src="/icons/close.png" className="w-3 lg:w-4" />
+          <img src={`${BASE_URL}icons/close.png`} className="w-3 lg:w-4" />
         </button>
 
         {losDemas.length > 1 && (
@@ -195,14 +198,14 @@ export const Design = () => {
               onClick={siguienteImagen}
               className="absolute left-4 opacity-0 lg:opacity-30 hover:opacity-100 cursor-pointer transition-all duration-300"
             >
-              <img src="/icons/next.png" className="rotate-180 w-10" />
+              <img src={`${BASE_URL}icons/next.png`} className="rotate-180 w-10" />
             </button>
 
             <button
               onClick={anteriorImagen}
               className="absolute right-4 opacity-0 lg:opacity-30 hover:opacity-100 cursor-pointer transition-all duration-300"
             >
-              <img src="/icons/next.png" className="w-10" />
+              <img src={`${BASE_URL}icons/next.png`} className="w-10" />
             </button>
           </>
         )}
@@ -246,7 +249,7 @@ export const Design = () => {
             onClick={() => setMoreInfo(false)}
             className="absolute top-3 right-3 opacity-60 hover:opacity-100 cursor-pointer"
           >
-            <img src="/icons/x.png" className="w-5" />
+            <img src={`${BASE_URL}icons/x.png`}className="w-5" />
           </button>
 
           <h2 className="text-xl font-bold mb-4 text-black">

@@ -1,15 +1,17 @@
 import { NavLink } from "react-router-dom";
 import { Footer } from "../../components";
 export const Home = () => {
-  const images = [
-    { src: "/images/background.png", to:"./ilustration" },
-    { src: "/images/alegria.png", to: "./design" },
-    { src: "/images/cartel.png", to: "./design" },
-    { src: "/images/conejo.png", to:"./ilustration"},
-    { src: "/images/Banner.png", to: "./design"},
-    { src: "/images/alice.png", to: "/ilustration"},
-    
-  ];
+  const BASE_URL = "/portfolioyixuan/";
+
+const images = [
+  { src: `${BASE_URL}images/background.png`, to: "./ilustration" },
+  { src: `${BASE_URL}images/alegria.png`, to: "./design" },
+  { src: `${BASE_URL}images/cartel.png`, to: "./design" },
+  { src: `${BASE_URL}images/conejo.png`, to: "./ilustration" },
+  { src: `${BASE_URL}images/Banner.png`, to: "./design" },
+  { src: `${BASE_URL}images/alice.png`, to: "/ilustration" },
+];
+
 
   return (
     <>
@@ -28,7 +30,7 @@ export const Home = () => {
           <div
             className="absolute inset-0 bg-center bg-cover mt-16 bg-no-repeat"
             style={{
-              backgroundImage: "url(/images/homeY.png)",
+              backgroundImage: `url(${BASE_URL}images/homeY.png)`,
               width: "100vw",
               left: 0,
               right: 0,

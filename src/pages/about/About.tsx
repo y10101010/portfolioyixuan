@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export const About = () => {
+  const BASE_URL = "/portfolioyixuan/";
   const [imageAbout, setImageAbout] = useState('yob.png');
 
   return (
@@ -17,7 +18,7 @@ export const About = () => {
         <figure className="flex justify-center min-w-min">
         <img 
         className="object-cover w-full h-full pt-4" 
-        src={`./../icons/${imageAbout}`}
+        src={`${BASE_URL}icons/${imageAbout}`}
         onMouseOver={() => setImageAbout('yobh.png')}
         onMouseOut={() => setImageAbout('yob.png')}
         />
