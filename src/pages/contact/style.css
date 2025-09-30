@@ -1,0 +1,124 @@
+.contacto-fondo {
+  background: linear-gradient(to bottom, var(--color-yellow) 10%, white 40%);
+  height: 100vh;
+}
+.contactoPrincipal {
+  margin: 0 auto;
+  padding: 2rem;
+  padding-top: 18rem;
+}
+
+.elContacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.input-apartado {
+  position: relative;
+  width: 100%;
+}
+
+.input-apartado input,
+.input-apartado textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 0.8rem 0.3rem 0.3rem;
+  font-size: 1rem;
+  outline: none;
+  background: transparent;
+}
+
+.input-apartado textarea {
+  min-height: 80px;
+  resize: none;
+}
+
+.input-apartado label {
+  position: absolute;
+  left: 5px;
+  top: 12px;
+  font-size: 1rem;
+  color: black;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.input-apartado input:focus + label,
+.input-apartado input:not(:placeholder-shown) + label,
+.input-apartado textarea:focus + label,
+.input-apartado textarea:not(:placeholder-shown) + label {
+  top: -8px;
+  font-size: 0.75rem;
+  color: grey;
+}
+
+.send {
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.send:hover {
+  text-decoration: underline;
+}
+
+.miInfo {
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.gmail {
+  width: 28px;
+  display: inline-block;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  opacity:80%;
+}
+
+.gmail:hover {
+  cursor: pointer;
+  opacity: 100%;
+}
+
+/* REEEESPONSIVEEE */
+
+@media (min-width: 768px) {
+  .contactoPrincipal {
+    max-width: 600px;
+    padding-top: 19rem;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .contactoPrincipal {
+    max-width: 700px;
+    padding-top: 20rem;
+  }
+.elContacto {
+  gap: 1.8rem;
+}
+
+  .input-apartado input,
+  .input-apartado textarea {
+    font-size: 1.1rem;
+  }
+  .input-apartado label {
+    font-size: 1.1rem;
+    top: 11px;
+  }
+
+  .input-apartado input:focus + label,
+  .input-apartado input:not(:placeholder-shown) + label,
+  .input-apartado textarea:focus + label,
+  .input-apartado textarea:not(:placeholder-shown) + label {
+    top: -12px;
+    font-size: 1rem;
+  }
+}
